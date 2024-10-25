@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my personal portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #cfcde2; 
+            color: #e0e0e0; /* Light text color for readability */
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #1f1f1f; /* Darker header background */
+            color: #ffffff;
+            padding: 40x 20x;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif; /* Professional font */
+        }
+
+        nav {
+            background-color: #030303;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping to prevent overflow */
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 5px 10px; /* Adjust margin for better spacing */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e0e0e0; /* Light color for buttons */
+            font-size: 0.9em;
+            padding: 05px 10px;
+            display: block;
+            background-color: #333; /* Default dark background for buttons */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #42415d; /* Green color when hovered */
+            color: white;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 40px auto; /* Added margin for better spacing */
+            background-color: #1f1f1f; /* Dark section background */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:hover {
+            box-shadow: 0 0 05px #fdfcfc, 0 0 15px #584b4b, 0 0 20px #951111; 
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #fbfbfb; 
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Arial', sans-serif; 
+        }
+
+        section p, ul {
+            font-size: 1.1em;
+            color: #cccccc; /* Light text for readability */
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #444; /* Subtle border between list items */
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .content-card {
+            background-color: #2b2b2b; /* Slightly lighter than sections */
+            padding: 20px;
+            border-radius: 15px; /* Rounded corners for the content cards */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .content-card h3 {
+            color: #4CAF50; /* Green for titles */
+            margin-bottom: 10px;
+        }
+
+        /* Gallery styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonial styles */
+        .testimonials {
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Social media icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h1>Welcome To My Personal Portfolio</h1>
+       <p>Desigened For Web Innovators Battle</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Educational Background</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research Area</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#presentation">Presentations</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="content-card">
+            <h2>Home</h2>
+            <p>Welcome To My Personal Portfolio. Here you will find details about my academic and professional journey, achievements, and more.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="content-card">
+            <h2>About Me</h2>
+            <p>A brief description about who you are, your background, goals, and aspirations.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="content-card">
+            <h2>Educational Background</h2>
+            <ul>
+                <li>Bachelor's Degree in Computer Science - University Name</li>
+                <li>Master's Degree in Data Science - University Name</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="content-card">
+            <h2>Experience</h2>
+            <ul>
+                <li>Software Developer at XYZ Corp (2020 - Present)</li>
+                <li>Data Analyst at ABC Inc (2018 - 2020)</li>
+            </ul>
+        </div>
+    </section>
+
+    
+    <section id="awards">
+        <div class="content-card">
+            <h2>Awards and Achievements</h2>
+            <ul>
+                <li>Best Researcher Award - 2023</li>
+                <li>Top 10 Data Scientist - 2022</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="content-card">
+            <h2>Projects</h2>
+            <div class="gallery">
+                <img src="project1.jpg" alt="Project 1">
+                <img src="project2.jpg" alt="Project 2">
+                <img src="project3.jpg" alt="Project 3">
+                <img src="project4.jpg" alt="Project 4">
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="research">
+        <div class="content-card">
+            <h2>Research Thrust Area</h2>
+            <p>A brief overview of your research interests and focus areas.</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="content-card">
+            <h2>List of Events (Organized/Attended)</h2>
+            <ul>
+                <li>Event 1: Organized/Attended details.</li>
+                <li>Event 2: Organized/Attended details.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="presentation">
+        <div class="content-card">
+            <h2>Poster/Paper Presentations</h2>
+            <p>Details about your poster and paper presentations at conferences or other platforms.</p>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="content-card">
+            <h2>Courses Completed (NPTEL/COURSERA/LinkedIn Learning)</h2>
+            <ul>
+                <li>Course 1: NPTEL Certification</li>
+                <li>Course 2: Coursera Certification</li>
+                <li>Course 3: LinkedIn Learning Course</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content-card">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div>
+                <p>Email: desourin640@gmail.com</p>
+                <p>Phone: +91 9332416868</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/yourprofile">GitHub</a>
+                <a href="https://x.com/de_sourin">Twitter</a>
+                <a href="https://www.linkedin.com/in/sourin-de-845045318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="content-card testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">"An amazing professional with great skills!" - Client A</div>
+            <div class="testimonial">"A dedicated and knowledgeable individual." - Colleague B</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 web dev. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade-in effect for sections
+        const sections = document.querySelectorAll("section");
+        const observerOptions = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>36
